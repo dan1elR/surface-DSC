@@ -132,7 +132,7 @@ def _sort_distances_surfels(distances, surfel_areas):
   sorted_surfels = np.array(sorted(zip(distances, surfel_areas)))
   return sorted_surfels[:, 0], sorted_surfels[:, 1]
 
-
+#%%
 def compute_surface_distances(mask_gt,
                               mask_pred,
                               spacing_mm):
@@ -289,7 +289,7 @@ def compute_surface_distances(mask_gt,
       "surfel_areas_pred": surfel_areas_pred,
   }
 
-
+#%%
 def compute_average_surface_distance(surface_distances):
   """Returns the average surface distance.
 
@@ -320,7 +320,7 @@ def compute_average_surface_distance(surface_distances):
       np.sum(surfel_areas_pred))
   return (average_distance_gt_to_pred, average_distance_pred_to_gt)
 
-
+#%%
 def compute_robust_hausdorff(surface_distances, percent):
   """Computes the robust Hausdorff distance.
 
@@ -361,7 +361,7 @@ def compute_robust_hausdorff(surface_distances, percent):
 
   return max(perc_distance_gt_to_pred, perc_distance_pred_to_gt)
 
-
+#%%
 def compute_surface_overlap_at_tolerance(surface_distances, tolerance_mm):
   """Computes the overlap of the surfaces at a specified tolerance.
 
@@ -392,7 +392,7 @@ def compute_surface_overlap_at_tolerance(surface_distances, tolerance_mm):
       np.sum(surfel_areas_pred))
   return (rel_overlap_gt, rel_overlap_pred)
 
-
+#%%
 def compute_surface_dice_at_tolerance(surface_distances, tolerance_mm):
   """Computes the _surface_ DICE coefficient at a specified tolerance.
 
